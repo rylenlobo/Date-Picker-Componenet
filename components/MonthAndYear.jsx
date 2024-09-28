@@ -15,7 +15,7 @@ const MonthAndYear = ({
   const year = date.getFullYear();
 
   return (
-    <div className="flex w-full justify-between items-center px-5 pt-2">
+    <div data-testid="month-and-year" className="flex w-full justify-between items-center px-5 pt-2">
       <p className="tabular-nums text-lg">{`${MONTHS[month]} ${year}`}</p>
       <div className="flex gap-2 items-center cursor-pointer text-gray-500">
         <button

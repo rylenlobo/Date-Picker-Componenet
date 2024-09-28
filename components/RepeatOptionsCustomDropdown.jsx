@@ -36,7 +36,7 @@ const RepeatOptionsCustomDropdown = ({ onCancel , onOk  }) => {
   };
 
   return (
-    <div className="absolute -left-1 flex flex-col items-start justify-center w-72 bg-white shadow-xl rounded-lg p-2">
+    <div data-testid="repeat-options-custom-dropdown" className="absolute -left-1 flex flex-col items-start justify-center w-72 bg-white shadow-xl rounded-lg p-2">
       <div className="text-sm w-full flex items-center justify-around space-x-2 mb-4">
         Every
         <input

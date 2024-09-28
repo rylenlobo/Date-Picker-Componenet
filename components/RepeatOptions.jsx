@@ -66,7 +66,7 @@ const RepeatOptions = () => {
   };
 
   return (
-    <div className="flex flex-col space-y-2 mt-5 relative">
+    <div data-testid="repeat-options" className="flex flex-col space-y-2 mt-5 relative">
       <div
         onClick={toggleRepeatOptionList}
         className={cn(
@@ -138,7 +138,7 @@ const RepeatOptions = () => {
           )}
         </div>
       )}
-      {isRepeatEndOpen && repeatOption && (
+            {isRepeatEndOpen && repeatOption && repeatOption !== 'custom' && (
           <RepeatEndCalendar handleRepeatEndClick={handleRepeatEndClick} />
       )}
     </div>

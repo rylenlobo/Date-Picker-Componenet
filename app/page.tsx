@@ -4,7 +4,7 @@ import RepeatOptions from "@/components/RepeatOptions";
 
 export default function Home() {
   return (
-    <main className=" h-screen w-screen flex justify-center items-start">
+    <main className=" h-screen w-screen flex justify-center items-start pt-5">
       <div className="absolute w-72 shadow-lg flex flex-col rounded-lg p-1">
         <MiniCalendar />
         <RepeatOptions />

@@ -8,7 +8,7 @@ const RepeatOptionsDropdown = ({
   handleOptionClick = () => {},
 }) => {
   return (
-    <div className="absolute -top-52 left-0 z-50 flex flex-col items-start justify-center w-full bg-white shadow-xl rounded-lg p-1">
+    <div data-testid="repeat-options-dropdown" className="absolute -top-52 left-0 z-50 flex flex-col items-start justify-center w-full bg-white shadow-xl rounded-lg p-1">
       {options.map((option) => (
         <div
           key={option}

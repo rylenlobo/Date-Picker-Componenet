@@ -6,8 +6,12 @@ const useRepeatEndCalendarStore = create((set) => ({
   calendarDates: generateCalendarDates(),
   endRepeatDate: null,
 
-  isRepeatEndOpen: false,
-  setIsRepeatEndOpen: (isOpen) => set({ isRepeatEndOpen: isOpen }),
+  setDate: (date) => {
+    set({
+      date: date,
+      calendarDates: generateCalendarDates(date.getMonth(), date.getFullYear())
+    });
+  },
 
   setEndRepeat: (year, month, date) => {
     const dateSelected = new Date(year, month, date);

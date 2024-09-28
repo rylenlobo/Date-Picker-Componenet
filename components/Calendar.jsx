@@ -14,7 +14,7 @@ const Calendar = ({
   const today = new Date();
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div data-testid="calendar" className="flex flex-col justify-center items-center">
       <div className="grid grid-cols-7 gap-2 mt-3 px-2">
         {DAYS_OF_WEEK.map((day, index) => (
           <div

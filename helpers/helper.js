@@ -1,5 +1,6 @@
 export const NO_OF_WEEKS = 6;
 export const DAYS_OF_WEEK = ["S", "M", "T", "W", "T", "F", "S"];
+
 export const DAYS_WEEK_FULL = [
   "Sunday",
   "Monday",
@@ -18,8 +19,9 @@ export const MONTH_OPTIONS = [
   "fifth",
   "last"
 ];
+
 const CURRENT_DATE = new Date();
-const CURRENT_MONTH = CURRENT_DATE.getMonth(); // 0-indexed
+const CURRENT_MONTH = CURRENT_DATE.getMonth();
 const CURRENT_YEAR = CURRENT_DATE.getFullYear();
 
 export const MONTHS = [
@@ -55,17 +57,15 @@ export const updateDate = (date, increment) => {
   return newDate;
 };
 
-// Get the first day of the month
 export const getMonthFirstDay = (month, year) => {
   return new Date(year, month, 1).getDay();
 };
 
-// Get the number of days in a month
 export const getMonthDays = (month, year) => {
-  const months30 = [3, 5, 8, 10]; // April, June, September, November
+  const months30 = [3, 5, 8, 10];
   const leapYear = year % 4 === 0;
 
-  return month === 1 // February
+  return month === 1
     ? leapYear
       ? 29
       : 28
@@ -74,7 +74,6 @@ export const getMonthDays = (month, year) => {
     : 31;
 };
 
-// Generate calendar dates for the specified month and year
 export const generateCalendarDates = (
   month = CURRENT_MONTH,
   year = CURRENT_YEAR
@@ -93,7 +92,6 @@ export const generateCalendarDates = (
 
   const prevMonthDays = getMonthDays(prevMonth, prevYear);
 
-  // Dates from the previous month
   const prevMonthDates = [...new Array(daysFromPrevMonth)].map((n, index) => {
     const date = index + 1 + (prevMonthDays - daysFromPrevMonth);
     const day = new Date(prevYear, prevMonth, date).getDay();
@@ -106,14 +104,12 @@ export const generateCalendarDates = (
     };
   });
 
-  // Dates from the current month
   const thisMonthDates = [...new Array(monthDays)].map((n, index) => {
     const date = index + 1;
     const day = new Date(year, month, date).getDay();
     return { date, day, type: "current", month, year };
   });
 
-  // Dates from the next month
   const nextMonthDates = [...new Array(daysFromNextMonth)].map((n, index) => {
     const date = index + 1;
     const day = new Date(nextYear, nextMonth, date).getDay();

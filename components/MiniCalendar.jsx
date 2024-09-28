@@ -19,10 +19,11 @@ const MiniCalendar = () => {
   const { customRepeatOption, repeatOption, weekDays, monthCustomOptions } =
     useRepeatOptionStore();
   
-  const {endRepeatDate} = RepeatEndCalendarStore()
+  const {endRepeatDate,setDate} = RepeatEndCalendarStore()
 
   const handleDateClick = (type, date, month, year) => {
     setSelected(Number(date), month, year);
+    setDate(new Date(year,month,date))
     if (type === "prev") {
       handlePrevDate();
     } else if (type === "next") {
@@ -144,7 +145,7 @@ const MiniCalendar = () => {
   
 
   return (
-    <>
+    <div data-testid="mini-calendar">
       <MonthAndYear
         handleCurrentDate={handleCurrentDate}
         handleNextDate={handleNextDate}
@@ -159,7 +160,7 @@ const MiniCalendar = () => {
         isCustomRepeat={isCustomRepeatSet}
         repeatOption={repeatOption}
       />
-    </>
+    </div>
   );
 };
 

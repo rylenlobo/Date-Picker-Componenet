@@ -30,10 +30,10 @@ const RepeatEndCalendar = ({handleRepeatEndClick}) => {
     endRepeatDate && givenDate.toDateString() === endRepeatDate.toDateString();
   const isDisabled = (givenDate) => givenDate < today;
 
-  const disablePrevButton = today.getMonth() === date.getMonth();
+  const disablePrevButton =  date >= today
 
   return (
-    <div className=" bg-white absolute top-7 w-72 -left-1 flex flex-col justify-center items-center shadow-lg rounded-lg p-4">
+    <div data-testid="repeat-end-calendar" className=" bg-white absolute top-7 w-72 -left-1 flex flex-col justify-center items-center shadow-lg rounded-lg p-4">
       <MonthAndYear
         handlePrevDate={handlePrevDate}
         handleCurrentDate={handleCurrentDate}
